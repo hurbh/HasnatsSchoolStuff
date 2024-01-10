@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Journal</title>
+    <style>
+        body {
+            background-color: LightBlue;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            background-color: white;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        details > summary {
+            padding: 10px;
+            width: 200px;
+            background-color: #eeeeee;
+            border: none;
+            box-shadow: 1px 1px 2px #bbbbbb;
+            cursor: pointer;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        details > p {
+            background-color: #eeeeee;
+            padding: 10px;
+            margin: 0;
+            box-shadow: 1px 1px 2px #bbbbbb;
+        }
+
+        .myDiv {
+            border: 5px outset black;
+            background-color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>School</h1>
+
+<details>
+    <summary>Dec 14, 2023</summary>
+    <p>
+        Today in class, we added color to our pages like I did on the first day. Color is nice, and I also learned how to center pages.
+    </p>
+</details>
+
+<details>
+    <summary>Dec 21, 2023</summary>
+    <p>
+        We didn't have a lesson today, so I started using the <code>details</code> and <code>summary</code> tags to log.
+    </p>
+</details>
+
+<details>
+    <summary>Dec 21, 2023 (No School!)</summary>
+    <p>
+        Slept mostly, found out Roblox fast flags stuff leaked from bug report.
+    </p>
+</details>
+
+<h1>Misc</h1>
+
+<script>
+    function coordinate(event) {
+        let x = event.clientX;
+        let y = event.clientY;
+        document.getElementById("X").value = x;
+        document.getElementById("Y").value = y;
+    }
+</script>
+
+<details>
+    <summary>Mousetrack Test (buggy)</summary>
+    <div onmousemove="coordinate(event)">
+        X-coordinate
+        <input type="text" id="X" readonly>
+        <br>
+        <br>
+        Y-coordinate
+        <input type="text" id="Y" readonly>
+    </div>
+</details>
+
+<details>
+    <summary>Game Entrance Test</summary>
+    <button onclick="document.location='game/Index.html'">Open Game</button>
+</details>
+
+</body>
+</html>
