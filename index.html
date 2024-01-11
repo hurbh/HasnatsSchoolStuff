@@ -66,17 +66,18 @@ details > p {
 <h1>Misc</h1>
 <script type="text/javascript">
 function mouse_position()
+var cursor_x = -1;
+var cursor_y = -1;
+document.onmousemove = function(event)
 {
-    var e = window.event;
-
-    var posX = e.clientX;
-    var posY = e.clientY;
-
-    document.Form1.posx.value = posX;
-    document.Form1.posy.value = posY;
-
-    var t = setTimeout(mouse_position,100);
-
+ cursor_x = event.pageX;
+ cursor_y = event.pageY;
+}
+setInterval(check_cursor, 1000);
+function check_cursor(){
+  console.log('Cursor at: '+cursor_x+', '+cursor_y);
+  document.Form1.posx.value = cursor_x;
+  document.Form1.posy.value = cursor_y;
 }
 </script>
 
