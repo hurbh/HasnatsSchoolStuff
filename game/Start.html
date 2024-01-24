@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No Game Yet</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .message {
+            font-family: 'Arial', sans-serif;
+            font-size: 24px;
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #333;
+            background-color: #fff;
+            border-radius: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #screwdriver {
+            width: 50px;
+            height: 50px;
+            background-color: #ccc;
+            border-radius: 50%;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            cursor: move;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="message">
+        Sorry, This file is nonexistent
+    </div>
+    <div id="screwdriver" draggable="true"></div>
+
+    <script>
+        const screwdriver = document.getElementById('screwdriver');
+        const message = document.querySelector('.message');
+
+        screwdriver.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', 'screwdriver');
+        });
+
+        message.addEventListener('dragover', (e) => {
+            e.preventDefault();
+        });
+
+        message.addEventListener('drop', (e) => {
+            e.preventDefault();
+            const draggedItem = e.dataTransfer.getData('text/plain');
+            
+            if (draggedItem === 'screwdriver') {
+                // Unscrew effect
+                message.innerHTML = 'Congratulations! You unscrewed it! <a href="https://your-link-here.com">Click here</a>';
+            }
+        });
+    </script>
+</body>
+</html>
