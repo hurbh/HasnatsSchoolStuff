@@ -24,7 +24,6 @@
             background-color: #fff;
             border-radius: 10px;
             position: relative;
-            z-index: 1;
         }
 
         #screwdriver {
@@ -42,10 +41,13 @@
 </head>
 <body>
     <div class="message">
+        <img src="https://en.pimg.jp/106/546/056/1/106546056.jpg" alt="screwhead.jpg" style="width:30px;height:30px;">
         Sorry, This file is nonexistent
+        <img src="https://en.pimg.jp/106/546/056/1/106546056.jpg" alt="screwhead.jpg" style="width:30px;height:30px;">
     </div>
     <div id="screwdriver" draggable="true">
         <p>External ScrewDriver</p>
+        <img src="https://img.freepik.com/premium-psd/pixel-art-picture-screwdriver-with-screwdriver_901483-18.jpg" alt="ScrewDriver.jpg" style="width:50px;height:50px;">
     </div>
 
     <script>
@@ -66,7 +68,7 @@
             
             if (draggedItem === 'screwdriver') {
                 // Unscrew effect
-                message.innerHTML = 'Congratulations! You unscrewed it! <a href="https://your-link-here.com">Click here</a>';
+                message.innerHTML = 'Congratulations! You unscrewed it! <a href="https://your-link-here.com">Click here(placeholder link)</a>';
             }
         });
     </script>
